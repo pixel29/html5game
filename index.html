@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Star Rush Game</title>
+	<script src="js/phaser.min.js"></script>
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Levels.js"></script>
+	<script src="js/HowToPlay.js"></script>
+	<script src="js/LevelOne.js"></script>
+	<script src="js/LevelTwo.js"></script>
+	<style> body { margin : 0; }</style>
+</head>
+<body>
+
+<script type="text/javascript">
+window.onload = function() {
+	//	Creating Phaser game
+	var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'gameContainer');
+	//	Adding game states
+	game.state.add('Boot', StarRush.Boot);
+	game.state.add('Preloader', StarRush.Preloader);
+	game.state.add('MainMenu', StarRush.MainMenu);
+	game.state.add('Levels', StarRush.Levels);
+	game.state.add('HowToPlay', StarRush.HowToPlay);
+	game.state.add('LevelOne', StarRush.LevelOne);
+	game.state.add('LevelTwo', StarRush.LevelTwo);
+	//	Starting Boot state
+	game.state.start('Boot');
+};
+</script>
+
+</body>
+</html>
